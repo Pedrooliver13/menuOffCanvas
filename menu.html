@@ -1,0 +1,28 @@
+<div>
+    <div class="modal__close">
+        <i class="material-icons">reorder</i>
+    </div>
+    <div class="modal__overlay">
+        <div class="modal">
+            <div class="modal__close">
+                <i class="material-icons">close</i>
+            </div>
+            <div class="modal__content">
+                <form class="search" action="/produtcs/search" method="GET">
+                    <input type="text" name="filter" placeholder="Buscar" {% if search.term %} value="{{search.term}}" {% endif %}>
+                    <button type="submit" class="search__button">
+                        <i class="material-icons">search</i>
+                    </button>
+                </form>
+                <ul>
+                    <li class="item-hbg">INÍCIO</li>
+                    <li class="item-hbg">SOBRE NÓS</li>
+                    <li class="item-hbg">MÓVEIS PLANEJADOS</li>
+                    <li class="item-hbg">PROJETOS</li>
+                    <li class="item-hbg">DICAS</li>
+                    <li class="item-hbg">CONTATO</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>{# /modal #}
