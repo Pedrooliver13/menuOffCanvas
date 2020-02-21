@@ -1,8 +1,11 @@
-   /* modal overlay header */
+/* modal overlay header */
+    #firstModalClose{
+        display: flex;
+    }
     .modal__overlay {
         position: fixed;
 
-        width: 70%;
+        width: 60%;
         height: 100%;
         padding: 20px ;
 
@@ -10,29 +13,16 @@
         right: 0;
 
         background-color: rgba(0, 0, 0,0.9);
-        
-        opacity: 0;
-        visibility: hidden;
-        
-    }
-    .modal__overlay.animation{
-        animation: off 250ms ease-in-out;
-    }
-    @keyframes off {
-        from{
-            opacity: 1;
-            width: 50%;
-        }
-        to{
-            width: 0%;
-            visibility: visible;
-            transition: 550ms;
-        }
+        transition: all 450ms ease-in;
     }
     /* modal barra de pesquisa */
-    .modal__overlay.active .search{
-        display: block;
+    .modal__overlay .search{
+        display: flex;
         margin-top: 10px;
+    }
+    
+    .modal__overlay.active .search__button{
+        display: flex;
     }
     /* modal__close */
     .modal__close{
@@ -69,11 +59,12 @@
         font-weight: bolder;
         cursor: pointer;
 
-        font-size: 25px;
+        width: 100%;
+        font-size: 20px;
         text-align: start;
 
         color: var(--secondary-color);
-        padding: 5px;
+        padding: 5px 0px;
     }
     .modal__content .item-hbg:hover {
         filter: brightness(125%);
@@ -83,17 +74,9 @@
     }
     /* modal ativo */
     .modal__overlay.active {
-        opacity: 1;
-        visibility: visible;
-        animation: up 250ms ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+        margin-right: -80px;
 
     }
-    @keyframes up{
-        from{
-            width: 0%;
-        }
-        to{
-            width: 50%;
-        }
-    }
-}
